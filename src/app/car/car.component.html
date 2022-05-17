@@ -1,0 +1,37 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+  <!-- Titre -->
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-12 col-lg-6">
+      <!-- Section Heading-->
+      <div id="titre" class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+        <h1>Catalogue</h1>
+        <p>Bienvenue dans le catalogue des voitures. Appuyer sur <b>"Customiser"</b> pour accéder à l'atelier de customisation virtuel.</p>
+        <div class="line">
+          <hr>  
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- fin -->
+<div class="row el-element-overlay" >
+                        <div *ngFor="let car of cars" id="cardvoiture" class="col-lg-3 col-md-2">
+                            <div class="card">
+                                <div class="el-card-item">
+                                    <div id="imgvoiture" class="el-card-avatar el-overlay-1"> <img src="{{car.imageUrl}}" alt="user">
+                                        <div class="el-overlay">
+                                            <ul class="list-style-none el-info">
+                                                <li class="el-item"><a class="btn default btn-outline image-popup-vertical-fit el-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                                                <li class="el-item"><a class="btn default btn-outline btn-sm el-link" routerLink="customiser"><i class="fa fa-link" aria-hidden="true"></i> Customiser</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="el-card-content">
+                                        <h4 class="m-b-0">{{car.nomVoiture}}</h4> <span class="text-muted">{{car.fabricant}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+</div>                      
+                    
+</div>

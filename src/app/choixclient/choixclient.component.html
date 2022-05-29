@@ -1,39 +1,77 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
 
-<div class="container bootdey">
-    <!-- Titre -->
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-12 col-lg-6">
-          <!-- Section Heading-->
-          <div id="titre" class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-            <h1>Liste des<span> clients</span></h1>
-            <p>Ici, vous trouverez tous les choix validés par les clients. Appuyer sur <b>"Planifier RDV"</b> pour planifier un rendez-vous avec un client.</p>
-            <div class="line">
-              <hr>  
+<div class="container">
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4>Liste des choix des clients</h4>
             </div>
-          </div>
-        </div>
-      </div>
-      <!-- fin -->
-    <div class="row flex-row">
-        <div *ngFor="let choixclient of choixclients" class="col-md-5 col-sm-6 col-remove">
-            <div class="widget-image has-shadow">
-                <div class="contact-card-2">
-                    <div class="cover-bg">
-                        <img src="https://www.largus.fr/images/images/mercedes-x350d-2018-002.jpg" class="img-fluid" alt="...">
-                    </div>
-                    <div class="widget-body">
-                        <div class="cover-image mx-auto">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="..." class="rounded-circle mx-auto">
-                        </div>
-                        <h4 class="nomVoiture">{{choixclient.nomVoiture}}</h4>
-                        <div class="fabricant">{{choixclient.fabricant}}</div>
-                        <div class="text-center pt-5 pb-3">
-                            <a href="#" class="btn btn-success">Details</a>
-                            <a href="#" class="btn btn-shadow">Planifier RDV</a>
-                        </div>
-                    </div>
+            <div class="card-body" >
+                <div  class="table-responsive" id="proTeamScroll" tabindex="2" style="height: auto; overflow: hidden; outline: none;">
+                    <table class="table " *ngFor="let c of choixclients">
+                        <thead>
+                            <tr>
+                                <th>Cust.</th>
+                                <th>Nom</th>
+                                <th>Prenom</th>
+                                <th>Télephone</th>
+                                <th>Modèle</th>
+                                <th>Couleur</th>
+                                <th>Jantes</th>
+                                <th>Siège</th>
+                                <th>Pneus</th>
+                                <th>Type de verre</th>
+                                <th>RDV</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="table-img"><img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="">
+                                </td>
+                                <td>
+                                    <h6 >{{c.nom}}</h6>
+                                </td>
+                                <td>
+                                    <h6 >{{c.prenom}}</h6>
+                                </td>
+                                <td class="text-truncate">
+                                    <h6 >{{c.tel}}</h6>
+
+                                </td>
+                                <td>
+                                    <h6 >{{c.nomVoiture}}</h6>                                
+                                </td>
+                                <td >
+                                    <h6 >{{c.couleur}}</h6>                                
+                                </td>
+                                <td>
+                                    <h6 >{{c.jantes}}</h6>                                
+
+                                </td>
+                                <td>
+                                    <h6 >{{c.siege}}</h6>                                
+
+                                </td>
+                                <td>
+                                    <h6 >{{c.pneus}}</h6>                                
+
+                                </td>
+                                <td>
+                                    <h6 >{{c.typeVerre}}</h6>                                
+
+                                </td>
+                                <td>
+                                   <a type="button" href="ajouterRdv/{{c.id}}" class="btn btn-primary btn-sm" >Planifier</a>                 
+                                </td>
+                                
+                            </tr>
+
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-        
-       
+    </div>
+</div>
+</div>

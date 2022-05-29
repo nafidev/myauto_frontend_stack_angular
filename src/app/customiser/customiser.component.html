@@ -1,0 +1,136 @@
+<div class="container">
+    <div class="row gutters">
+    <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+    <div class="card h-100">
+        <div class="card-body">
+            <div class="account-settings">
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
+                    </div>
+                    <h5 class="user-name">User</h5>
+                    <h6 class="user-email">User@mail.com</h6>
+                </div>
+                <div class="about">
+                    <h5>Bienvenue</h5>
+                    <p>Ici vous pouvez valider votre choix, ensuite, un commercial va organiser un rendez vous après avoir visualisé votre choix.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    <div  class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+
+        
+    <form [formGroup]="customiserForm" (ngSubmit)="onAddChoixclient(customiserForm)" >
+    <div class="card h-100">
+        <div class="card-body">
+            <div class="row gutters">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <h6 class="mb-2 text-primary">Informations personnelles</h6>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="fullName">Nom </label>
+                        <input formControlName="nom" type="text" class="form-control" id="fullName" placeholder="Ex. Adam">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="eMail">Prénom</label>
+                        <input formControlName="prenom" type="text" class="form-control" id="eMail" placeholder="Ex. Nafi">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="phone">Numéro de téléphone</label>
+                        <input formControlName="tel" type="text" class="form-control" id="phone" placeholder="Ex. 06801175xx">
+                    </div>
+                </div>
+            
+            </div>
+            
+            <div class="row gutters">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <h6 class="mt-3 mb-2 text-primary">Customisation</h6>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="Street">Modèle</label>
+                        <select class="custom-select" formControlName="nomVoiture">
+                            <option>Appuyer pour chosiir...</option>
+                            <option *ngFor="let car of cars"> {{car.nomVoiture}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="ciTy">Jantes</label>
+                        <select class="custom-select" formControlName="jantes">
+                            <option>Acier</option>
+                            <option>Aluminium</option>
+                            <option>Composite</option>
+                        </select>                    
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="sTate">Pneus</label>
+                        <select formControlName="pneus" class="custom-select">
+                            <option>Eté</option>
+                            <option>Hiver</option>
+                            <option>Quatres saisons</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="sTate">Couleur</label>
+                        <select formControlName="couleur" class="custom-select">
+                            <option>Blanche</option>
+                            <option>Rouge</option>
+                            <option>Noire</option>
+                            <option>Bleue</option>
+                            <option>Grise</option>
+                            <option>Beige</option>                         
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="zIp">Type du verre</label>
+                        <select formControlName="typeVerre" class="custom-select">
+                            <option>Verre feuilleté</option>
+                            <option>Verre hydrophobe</option>
+                            <option>Verre à controle solaire</option>
+                            <option>Verre ultra résistant</option>
+                            <option>Verre technique</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="form-group">
+                        <label for="zIp">Siège</label>
+                        <select formControlName="siege" class="custom-select">     
+                            <option>Standart</option>
+                            <option>Cuir</option>
+                            <option>Prestige</option>
+                        </select>                    
+                    </div>
+                </div>
+            </div>
+            <div class="row gutters">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="text-right">
+                        <button type="button" id="submit"  class="btn btn-secondary btn-sm">Cancel</button>
+                        <button  type="submit" id="submit"class="btn btn-primary btn-sm" >Valider</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> </form>
+    </div>
+   
+    </div>
+    </div>

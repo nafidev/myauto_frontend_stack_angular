@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from './services/authentication.service';
 
 
 
@@ -7,4 +10,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent{}
+export class AppComponent{
+  constructor(public authService: AuthService){}
+ 
+
+
+  
+  
+
+}

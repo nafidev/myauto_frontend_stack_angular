@@ -1,6 +1,9 @@
 //1:19:46
 export interface ChoixClient {
     id: number;
+    nom: string;
+    prenom: string;
+    tel: string;
     nomVoiture: string;
     fabricant: string;
     prixInitial: number;

@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { RouterModule, Routes } from '@angular/router'
+import { RouterModule, Routes } from '@angular/router';
+
 
 
 import { AppComponent } from './app.component';
@@ -14,6 +15,11 @@ import { CarService } from './car/car.service';
 import { CustomiserComponent } from './customiser/customiser.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { FormsModule, NgSelectOption, ReactiveFormsModule } from '@angular/forms';
+import { AjouterRdvComponent } from './ajouter-rdv/ajouter-rdv.component';
+import { RendezvousComponent } from './rendezvous/rendezvous.component';
+import { RendezvousService } from './rendezvous/rendezvous.service';
+
 
 
 
@@ -28,15 +34,23 @@ import { RegisterComponent } from './register/register.component';
     CustomiserComponent,
     LoginComponent,
     RegisterComponent,
+    AjouterRdvComponent,
+    RendezvousComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    appRoutingModule   
+    appRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+
+    
   ],
   providers: [
     ChoixclientService,
-    CarService
+    CarService,
+    RendezvousService
+    
   ],
   bootstrap: [AppComponent]
 })

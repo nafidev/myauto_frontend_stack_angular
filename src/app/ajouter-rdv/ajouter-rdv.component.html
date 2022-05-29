@@ -1,0 +1,70 @@
+<div class="container bootstrap snippets bootdey">
+    <h1 class="text-primary">Planification de Rendez-vous</h1>
+      <hr>
+	<div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="avatar img-circle img-thumbnail" alt="avatar">
+         
+        </div>
+      </div>
+      
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+        <div class="alert alert-info alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <i class="fa fa-coffee"></i>
+          Veuillez remplir <strong>tous</strong> les champs afin de planifier un rendezvous.
+        </div>
+        <h3>Informations</h3>
+        
+        <form  [formGroup]="rdvForm" (ngSubmit)="onAddrdv(rdvForm)"  class="form-horizontal" role="form">
+          <div class="form-group" >
+            <label class="col-lg-3 control-label">Nom du client:</label>
+            <div class="col-lg-8">
+              <input formControlName="nomclient" class="form-control" type="text" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Tél du client:</label>
+            <div class="col-lg-8">
+              <input  formControlName="telclient"  class="form-control" type="text" value="bootdey">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Nom du commercial:</label>
+            <div class="col-lg-8">
+              <input formControlName="nomcommercial"  class="form-control" type="text" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Id choix:</label>
+            <div class="col-lg-8">
+              <input formControlName="idchoix"  class="form-control" type="text" value="idchoix">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Tél du commercial:</label>
+            <div class="col-lg-8">
+                <input formControlName="telcommercial"  class="form-control" type="text" value="">
+              </div>
+            
+          </div>
+
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Date du rendez-vous::</label>
+            <div class="col-lg-8">
+                <input formControlName="daterdv"  class="form-control" type="text" value="">
+              </div>
+            
+          </div>
+
+          <div class="form-group">
+                <button style="float: right;" type="submit" class="btn btn-primary btn-sm">Valider</button>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+<hr>
